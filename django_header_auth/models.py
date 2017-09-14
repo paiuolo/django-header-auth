@@ -23,7 +23,8 @@ class ConsumerManager(auth_models.BaseUserManager):
         if not username:
             raise ValueError('Users must have a username field')
 
-        print("creating user", "with domain", domain, "email", email, 'username', username)
+        print("creating user", "with domain", domain,
+              "email", email, 'username', username)
 
         consumer = self.model(
             domain=domain, email=email, username=username,
@@ -60,16 +61,10 @@ class Consumer(auth_models.AbstractUser):
     REQUIRED_FIELDS = ['domain', 'email']
 
     @property
-    def classname(self):
-        return self.__class__.__name__.lower()
-
-    @property
     def is_alive(self):
         return self.is_active
 
     class Meta:
-        verbose_name = _('Consumer')
-        verbose_name_plural = _('Consumers')
         unique_together = (("domain", "email"),)
 
     def get_full_name(self):

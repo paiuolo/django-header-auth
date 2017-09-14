@@ -11,5 +11,7 @@ class ConsumerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Consumer
-        fields = ('uuid', 'domain', 'email', 'date_joined', 'updated_at', 'classname', 'groups')
-        read_only_fields = ('uuid', 'date_joined', 'token', 'updated_at', 'classname', 'groups')
+        fields = ('uuid', 'domain', 'email',
+                  'date_joined', 'updated_at', 'groups')
+        read_only_fields = ('uuid', 'date_joined', 'token',
+                            'updated_at', 'groups')
