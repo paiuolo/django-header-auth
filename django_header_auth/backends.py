@@ -14,7 +14,6 @@ class DjangoHeaderAuthBackend(RemoteUserBackend):
     Consumer authentication backend
     """
     def authenticate(self, request, remote_user):
-        print('authenticate', request, remote_user)
         """
         The username passed as ``remote_user`` is considered trusted. Return
         the ``User`` object with the given username. Create a new ``User``

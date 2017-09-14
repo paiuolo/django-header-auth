@@ -4,14 +4,14 @@ Django remote headers driven authentication.
 
 ## Quick start
 
-1. Add "django_header_auth" to your INSTALLED_APPS setting like this::
+1. Add "django_header_auth" to your INSTALLED_APPS setting like this:
     ```python
     INSTALLED_APPS = [
         ...
         'django_header_auth',
     ]
     ```
-2. Set the default django user model and setup authentication middleware and backends in settings file::
+2. Set the default django user model and setup authentication middleware and backends in settings file:
     ```python
     AUTH_USER_MODEL = 'django_header_auth.Consumer'
     
@@ -27,7 +27,7 @@ Django remote headers driven authentication.
     ]
     ```
     
-3. Include the django_header_auth URLconf in your project urls.py like this::
+3. Include the django_header_auth URLconf in your project urls.py like this:
     ```python
     from django_header_auth.urls import urlpatterns as consumers_urls
 

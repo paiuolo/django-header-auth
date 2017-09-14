@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     license='MIT',
-    description='A simple Django app to manage remote authenticated consumers as users.',
+    description='A simple Django app to manage remote authenticated consumers by headers.',
     long_description=README,
     url='https://www.paiuolo.it',
     author='Luca Bertuol',
