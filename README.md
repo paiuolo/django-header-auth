@@ -31,7 +31,7 @@ Django remote headers driven authentication.
     ```python
     from django_header_auth.urls import urlpatterns as consumers_urls
 
-    url(r'^django_header_auth/', include('consumers_urls')),
+    url(r'^django_header_auth/', include(consumers_urls)),
    ```
 4. Run `python manage.py migrate` to create the django_header_auth models.
 

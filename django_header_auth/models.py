@@ -30,7 +30,7 @@ class ConsumerManager(auth_models.BaseUserManager):
             domain=domain, email=email, username=username,
             is_staff=False, is_active=True,
             is_superuser=False,
-            last_login=now, created_at=now, **extra_fields)
+            last_login=now, date_joined=now, **extra_fields)
 
         if password:
             consumer.set_password(password)
