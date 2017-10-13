@@ -18,12 +18,12 @@ Django remote headers driven authentication.
     MIDDLEWARE = [
         '...',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
-        'django_header_auth.middleware.RemoteUserMiddleware',
+        'django_header_auth.middleware.DjangoHeaderAuthMiddleware',
         '...',
     ]
     
     AUTHENTICATION_BACKENDS = [
-        'django_header_auth.backends.RemoteUserBackend',
+        'django_header_auth.backends.DjangoHeaderAuthMiddleware',
     ]
     ```
     

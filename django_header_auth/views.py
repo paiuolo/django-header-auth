@@ -4,8 +4,7 @@ from .serializers import ConsumerSerializer
 from .models import Consumer
 
 
-class ConsumerViewSet(viewsets.ModelViewSet):
-
+class ConsumerViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = ConsumerSerializer
     lookup_field = 'uuid'
 
@@ -13,3 +12,4 @@ class ConsumerViewSet(viewsets.ModelViewSet):
         if self.request.user.is_staff:
             return Consumer.objects.all()
         return Consumer.objects.filter(pk=self.request.user.pk)
+        

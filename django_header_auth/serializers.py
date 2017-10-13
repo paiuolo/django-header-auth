@@ -3,7 +3,7 @@ from rest_framework import serializers
 from .models import Consumer
 
 
-class ConsumerSerializer(serializers.ModelSerializer):
+class ConsumerSerializer(serializers.HyperlinkedModelSerializer):
     groups = serializers.SlugRelatedField(
         many=True,
         read_only=True,
@@ -11,7 +11,11 @@ class ConsumerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Consumer
-        fields = ('uuid', 'domain', 'email',
+        fields = ('url', 'uuid', 'domain', 'email',
                   'date_joined', 'updated_at', 'groups')
-        read_only_fields = ('uuid', 'date_joined', 'token',
+        read_only_fields = ('url', 'uuid', 'date_joined', 'token',
                             'updated_at', 'groups')
+                            
+        extra_kwargs = {
+            'url': {'view_name': 'consumer-detail', 'lookup_field': 'uuid'}
+        }
