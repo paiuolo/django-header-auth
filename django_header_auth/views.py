@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from rest_framework import viewsets
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from .serializers import ConsumerSerializer
 from .models import Consumer
 
 
-class ConsumerViewSet(viewsets.ReadOnlyModelViewSet):
+class ConsumerViewSet(LoginRequiredMixin, viewsets.ReadOnlyModelViewSet):
     serializer_class = ConsumerSerializer
     lookup_field = 'uuid'
 
